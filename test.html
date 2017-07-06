@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Langwin</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Bootstrap v3.3.4 Grid Styles -->
+	<!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css"> -->
+	<style>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.img-responsive{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role="button"]{cursor:pointer}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.container-fluid{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.row{margin-left:-15px;margin-right:-15px}.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media (min-width:768px){.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media (min-width:992px){.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media (min-width:1200px){.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}.clearfix:before,.clearfix:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after{content:" ";display:table}.clearfix:after,.container:after,.container-fluid:after,.row:after{clear:both}.center-block{display:block;margin-left:auto;margin-right:auto}.pull-right{float:right !important}.pull-left{float:left !important}.hide{display:none !important}.show{display:block !important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none !important}.affix{position:fixed}@-ms-viewport{width:device-width}.visible-xs,.visible-sm,.visible-md,.visible-lg{display:none !important}.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block{display:none !important}@media (max-width:767px){.visible-xs{display:block !important}table.visible-xs{display:table}tr.visible-xs{display:table-row !important}th.visible-xs,td.visible-xs{display:table-cell !important}}@media (max-width:767px){.visible-xs-block{display:block !important}}@media (max-width:767px){.visible-xs-inline{display:inline !important}}@media (max-width:767px){.visible-xs-inline-block{display:inline-block !important}}@media (min-width:768px) and (max-width:991px){.visible-sm{display:block !important}table.visible-sm{display:table}tr.visible-sm{display:table-row !important}th.visible-sm,td.visible-sm{display:table-cell !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-block{display:block !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline{display:inline !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline-block{display:inline-block !important}}@media (min-width:992px) and (max-width:1199px){.visible-md{display:block !important}table.visible-md{display:table}tr.visible-md{display:table-row !important}th.visible-md,td.visible-md{display:table-cell !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-block{display:block !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline{display:inline !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline-block{display:inline-block !important}}@media (min-width:1200px){.visible-lg{display:block !important}table.visible-lg{display:table}tr.visible-lg{display:table-row !important}th.visible-lg,td.visible-lg{display:table-cell !important}}@media (min-width:1200px){.visible-lg-block{display:block !important}}@media (min-width:1200px){.visible-lg-inline{display:inline !important}}@media (min-width:1200px){.visible-lg-inline-block{display:inline-block !important}}@media (max-width:767px){.hidden-xs{display:none !important}}@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none !important}}@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none !important}}@media (min-width:1200px){.hidden-lg{display:none !important}}.visible-print{display:none !important}@media print{.visible-print{display:block !important}table.visible-print{display:table}tr.visible-print{display:table-row !important}th.visible-print,td.visible-print{display:table-cell !important}}.visible-print-block{display:none !important}@media print{.visible-print-block{display:block !important}}.visible-print-inline{display:none !important}@media print{.visible-print-inline{display:inline !important}}.visible-print-inline-block{display:none !important}@media print{.visible-print-inline-block{display:inline-block !important}}@media print{.hidden-print{display:none !important}}</style>
+	<!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
+	<style>.headers,body,h1,h2,h3,h4,h5,h6{font-family:RalewayRegular,Verdana,Geneva,sans-serif}body{font-size:15px;min-width:320px;position:relative;line-height:1.5625em;overflow-x:hidden}.hidden{display:none}a,a:active,a:focus,a:hover{outline:0;color:#74b65f}.headers,h1,h2,h3,h4,h5,h6{text-transform:uppercase;font-weight:400;color:#2c3949}h1,h2,h3,h4,h5,h6{line-height:1.375em}h1{font-size:2.6875em}h2{font-size:3.4375em}h3{font-size:2.8125em}b,strong{font-family:RalewayBold,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-weight:400}.button-green,.button-green-top,.button-red,.button-top,.button-white,.form-free button,.forms{font-family:RalewayRegular,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;text-decoration:none}.before{content:'';position:absolute}ul{list-style-type:none;margin:0;padding:0}.toggle-mnu span:after,.toggle-mnu span:before{content:"";position:absolute;left:0;top:9px}.toggle-mnu span:after{top:18px}.toggle-mnu span{position:relative;display:block}.toggle-mnu span,.toggle-mnu span:after,.toggle-mnu span:before{width:100%;height:2px;background-color:#fff;-webkit-transition:all .3s;transition:all .3s;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-border-radius:2px;border-radius:2px}.toggle-mnu.on span{background-color:transparent}.toggle-mnu.on span:before{-webkit-transform:rotate(45deg) translate(-1px,0);-ms-transform:rotate(45deg) translate(-1px,0);transform:rotate(45deg) translate(-1px,0)}.toggle-mnu.on span:after{-webkit-transform:rotate(-45deg) translate(6px,-7px);-ms-transform:rotate(-45deg) translate(6px,-7px);transform:rotate(-45deg) translate(6px,-7px)}.toggle-mnu.on{opacity:1;visibility:visible}.form-free{padding:15px 0}.form-free form{padding:25px 0;text-align:center}.form-free input{-webkit-border-radius:25px;border-radius:25px;background-color:#fff;border:none;width:240px;height:50px;line-height:50px;font-size:1.5625em;margin-right:25px;color:#302e2d;padding-left:25px;text-align:left}.form-free button{margin:0}.form-free h4{margin:0 0 10px;text-align:center;color:#fff;text-transform:none;font-size:2em}.button-green,.button-green-top,.form-free button{background-color:#ffc600;color:#fff}.button-green-top:active,.button-green-top:focus,.button-green-top:hover,.button-green:active,.button-green:focus,.button-green:hover,.form-free button:active,.form-free button:focus,.form-free button:hover{background-color:#f05d00;text-decoration:none;color:#fff}.button-green-top,.button-red,.button-top{background-color:#19bf3d!important;color:#fff!important}.button-green-top:active,.button-green-top:focus,.button-green-top:hover,.button-red:active,.button-red:focus,.button-red:hover,.button-top:active,.button-top:focus,.button-top:hover{background-color:#199634!important;text-decoration:none;color:#fff!important}.button-top{line-height:1.5!important}.button-green-top{line-height:48px!important}.button-white{background-color:#DADADA;color:#fff}.button-white:active,.button-white:focus,.button-white:hover{background-color:#CECECE;text-decoration:none;color:#fff}input{-webkit-border-radius:0!important;border-radius:0!important}.button-green,.button-green-top,.button-red,.button-top,.button-white,.form-free button,.forms{display:inline-block;text-align:center;height:50px;line-height:45px;font-size:1.5625em;width:275px;-webkit-transition:all .25s ease;transition:all .25s ease;border:none!important;text-transform:uppercase!important}.button-top{font-size:1em;-webkit-border-radius:5px;border-radius:5px;border-width:1px;border-color:#fff;border-style:solid;background-color:#DFDF00;width:200px;height:30px;-webkit-transition:all .25s ease;transition:all .25s ease;display:block;color:#000}.button-top:active,.button-top:focus,.button-top:hover{background-color:#E9E900;text-decoration:none;color:#000}header{min-height:665px;height:100vh;background-size:cover;background-position:center;position:relative;padding-bottom:50px}header .mouse-wrap{position:absolute;bottom:20px;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}header .mouse-wrap a{text-decoration:none;display:block;color:#fff}header .mouse-wrap img{display:block;margin-top:10px;margin-left:38px}header .header-left{text-align:center;padding-top:0}header .header-left h1{text-transform:none;color:#fff;border-bottom:#74b65f solid;display:inline-block;margin:0}header .header-left p{padding:0 100px;position:relative;font-size:1.75em;line-height:1.3;color:#fff}header .header-left a{margin:20px 0;background-color:#DFDF00;color:#000}header .header-left a:active,header .header-left a:focus,header .header-left a:hover{background-color:#E9E900}header .header-left i{font-size:56px;color:#74b65f}header .top-line{position:relative;width:100%;min-height:140px}header .top-line .row{height:110px;line-height:110px;position:relative}header .top-line .row .toggle-mnu{cursor:pointer;display:block;width:28px;height:28px;float:right;margin-top:45px}header .top-line .row .logo{float:left;padding-left:15px}header .top-line .row .logo img{height:50px;opacity:.85}header .top-line .row .phone{float:right;font-family:RobotoBold,Verdana,Geneva,sans-serif;font-size:1.25em;color:#fff;line-height:3.75em;padding-right:15px;text-align:center}header .top-line .row .header-menu{width:100%;text-align:center}header .top-line .row .header-menu li{display:inline-block;padding:0 5px}header .top-line .row .header-menu li a{font-size:1em;text-decoration:none;color:#fff;-webkit-transition:color .3s ease;transition:color .3s ease}header .top-line .row .header-menu li a.active,header .top-line .row .header-menu li a:active,header .top-line .row .header-menu li a:focus,header .top-line .row .header-menu li a:hover{text-decoration:underline;color:#74b65f}.top_nav_wrap{display:none;width:100%;min-height:40px;line-height:40px;background-color:rgba(0,0,0,.8);position:fixed;top:0;z-index:999}.top_nav_wrap .top_nav{display:inline-block;width:100%;text-align:center}.top_nav_wrap .top_nav li{display:inline-block;padding:0 10px}.top_nav_wrap .top_nav li a{font-size:1.125em;font-family:RobotoBold;text-decoration:none;-webkit-transition:color .3s ease;transition:color .3s ease;display:block;height:100%;color:#74b65f}.top_nav_wrap .top_nav li a:active,.top_nav_wrap .top_nav li a:hover{color:#fff}.top_nav_wrap .top_nav li a.mPS2id-highlight{color:#fff!important}.top_nav_wrap .top_nav li a:focus{color:#74b65f}.header-menu-toggle{display:none;position:fixed;top:0;left:0;height:100vh;width:100%;opacity:.95;background-color:#1C242C;z-index:998}.header-menu-toggle ul{position:absolute;width:100%;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.header-menu-toggle ul li{display:block;text-align:center;line-height:3em;padding:0}.header-menu-toggle ul li a{display:block;padding-right:15px;text-transform:uppercase;font-family:RalewayBold,Verdana,Geneva,sans-serif;font-size:1.125em;z-index:9999;text-decoration:none;-webkit-transition:all .3s ease;transition:all .3s ease}.header-menu-toggle ul li a.active,.header-menu-toggle ul li a:active,.header-menu-toggle ul li a:focus,.header-menu-toggle ul li a:hover{text-decoration:none;background-color:#273646;color:#fff}[class*=" icon-"]:before,[class^=icon-]:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;font-smoothing:antialiased;font-smoothing:grayscale}.icon-down:before{content:'\e800'}.icon-up:before{content:'\e801'}.icon-phone:before{content:'\e802'}.icon-vk:before{content:'\e803'}.icon-twitter:before{content:'\e804'}.icon-facebook:before{content:'\e805'}.mPS2id-highlight{color:#fff}.form-test h1{text-align:center}.form-test .test-button-wrap{width:100%;text-align:center;padding:50px 0 100px}#form-test{font-size:1em;font-family:RobotoRegular,Verdana,Geneva,sans-serif}#form-test .input-wrap{width:100%;text-align:right}#form-test .input-wrap input{display:inline-block;text-align:left;margin:15px auto}#form-test .select-wrap-wrap{margin:0 10px 20px}#form-test .select-wrap-wrap .select-wrap{display:inline-block;position:relative;z-index:999}#form-test .select-wrap-wrap .select-wrap::after{content:'\e800';font-family:fontello;font-size:.875em;line-height:.8;padding:0;position:absolute;display:block;right:-4px;bottom:-.5em;color:#74b65f}#form-test .select-wrap-wrap .select-wrap select{background:0 0;text-align:center;cursor:pointer;padding:5px;font-size:16px;line-height:1;border:0;-webkit-border-radius:0;border-radius:0;height:100%;-webkit-appearance:none;display:inline;-webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,.1);box-shadow:0 4px 3px 0 rgba(0,0,0,.1);position:relative}.thanks,.thanks-2{display:none;width:100%;height:100%;position:fixed;top:0;left:0;background-color:rgba(0,0,0,.9);z-index:9998}.thanks p,.thanks-2 p{position:absolute;padding:15px;width:100%;top:40%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:9999;font-size:2em;color:#fff}.thanks-2.visible,.thanks.visible{display:block}</style>
+	<!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+	<script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
+
+	<!-- Load CSS Start -->
+	<script>loadLocalStorageCSS( "webfonts", "/css/fonts.min.css?ver=1.0.0" );</script>
+	<!--script>loadCSS( "css/fonts.min.css?ver=1.0.0" );</script-->
+	<!--script>loadCSS( "css/header.min.css?ver=1.0.0", false, "all" );</script-->
+	<script>loadCSS( "/css/main.min.css?ver=1.0.0", false, "all" );</script>
+	<!-- Load CSS End -->
+
+	<!-- Load CSS Compilled without JS -->
+	<noscript>
+		<link rel="stylesheet" href="/css/fonts.min.css">
+		<link rel="stylesheet" href="/css/main.min.css">
+	</noscript>
+
+</head>
+
+<body>
+
+
+
+<div class="section test">
+<div class="logo">
+	<a href="javascript:history.back();"><img src="img/logo.png" alt="Langwin" style="width: 120px;" /></a>
+</div>
+	<div class="container form-test">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<h1>Тест</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+							<form id="form-test">
+
+									<input type="hidden" name="project_name" value="Langwin_test">
+									<input type="hidden" name="admin_email" value="mylangwin@gmail.com">
+									<input type="hidden" name="form_subject" value="Результаты_теста">
+
+								<div class="input-wrap">
+									Ваше имя: <input type="text" name="Name" placeholder="Ваше имя..." required><br>
+									Ваш e-mail: <input type="text" name="E-mail" placeholder="Ваш e-mail..." required>
+								</div>
+
+
+							<div class="select-wrap-wrap" style="margin-top: 30px;">
+								1. Odkud jste? –
+								<div class="select-wrap">
+									<select name="1. Odkud jste? – " size="1" required>
+										<option value="a) Jsem z Kanady." title="a)">Jsem z Kanady</option>
+										<option value="b) Je z Kanady.">Je z Kanady</option>
+										<option value="c) Jsem Kanada.">Jsem Kanada</option>
+									</select>
+								</div>
+								.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+								2.
+								<div class="select-wrap">
+									<select name="2. _____ z Ruska? – Ano, jsem." size="1" required>
+										<option value="a) Jseš">Jseš</option>
+										<option value="b) Jsi">Jsi</option>
+										<option value="c)  Seš">Seš</option>
+									</select>
+								</div>
+								z Ruska? – Ano, jsem.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+								3. To
+								<div class="select-wrap">
+									<select name="3. To _____ profesor, to je manažer." size="1" required>
+										<option value="a) nejste ">nejste </option>
+										<option value="b) neje">neje</option>
+										<option value="c) není">není</option>
+									</select>
+								</div>
+								 profesor, to je manažer.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+							4. Promiňte! –
+								<div class="select-wrap">
+									<select name="4. Promiňte! – _____." size="1" required>
+										<option value="a) Ujde to.">Ujde to</option>
+										<option value="b) Špatně. ">Špatně</option>
+										<option value="c) To nic.">To nic</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					5. Jak se máte? –
+								<div class="select-wrap">
+									<select name="5. Jak se máte? – _____" size="1" required>
+										<option value="a) A vy?">A vy</option>
+										<option value="b) Jak se máte? ">Jak se máte</option>
+										<option value="c) Dobře, a vy?">Dobře, a vy</option>
+									</select>
+								</div>
+					?
+							</div>
+
+							<div class="select-wrap-wrap">
+					6. Mám telefon sedm nula pět, dva šest tři, devět čtyři jedna -
+								<div class="select-wrap">
+									<select name="6. Mám telefon sedm nula pět, dva šest tři, devět čtyři jedna." size="1" required>
+										<option value="a) 705 283 941 ">705 283 941 </option>
+										<option value="b) 705 264 931">705 264 931</option>
+										<option value="c) 705 263 941">705 263 941</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					7.
+								<div class="select-wrap">
+									<select name="7. _____, kde je Hlavní nádraží?" size="1" required>
+										<option value="a) Umíte">Umíte</option>
+										<option value="b) Znáte ">Znáte</option>
+										<option value="c) Nevíte">Nevíte</option>
+									</select>
+								</div>
+					 kde je Hlavní nádraží ?
+							</div>
+
+							<div class="select-wrap-wrap">
+					8. Musíte jet
+								<div class="select-wrap">
+									<select name="8. Musíte jet _____." size="1" required>
+										<option value="a) na autobus ">na autobus</option>
+										<option value="b) autobus">autobus</option>
+										<option value="c) autobusem">autobusem</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					9. Musíte jít
+								<div class="select-wrap">
+									<select name="9. Musíte jít _____." size="1" required>
+										<option value="a) pravo">pravo</option>
+										<option value="b) doprava">doprava</option>
+										<option value="c) vpravo">vpravo</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					10.
+								<div class="select-wrap">
+									<select name="10. _____ čaj je_part1" size="1" required>
+										<option value="a) ten">ten</option>
+										<option value="b) ta">ta</option>
+										<option value="c) to">to</option>
+									</select>
+								</div>
+					čaj je
+							<div class="select-wrap">
+								<select name="10._part2_čaj je____" size="1" required>
+									<option value="a) černý">černý</option>
+									<option value="b) černá">černá</option>
+									<option value="c) černé">černé</option>
+								</select>
+							</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					11.
+								<div class="select-wrap">
+									<select name="11. _____ 25 let." size="1" required>
+										<option value="a) Je mi">Je mi</option>
+										<option value="b) Jsem">Jsem</option>
+										<option value="c) Já">Já</option>
+									</select>
+								</div>
+					25 let.
+							</div>
+
+							<div class="select-wrap-wrap">
+					12.
+								<div class="select-wrap">
+									<select name="12. _____ tatínek se jmenuje Josef." size="1" required>
+										<option value="a) Má">Má</option>
+										<option value="b) Můj">Můj</option>
+										<option value="c) Mé">Mé</option>
+									</select>
+								</div>
+					tatínek se jmenuje Josef.
+							</div>
+
+							<div class="select-wrap-wrap">
+					13.
+								<div class="select-wrap">
+									<select name="13. _____ se sejdeme?" size="1" required>
+										<option value="a) Kdy">Kdy</option>
+										<option value="b) Co">Co</option>
+										<option value="c) Kdo">Kdo</option>
+									</select>
+								</div>
+					se sejdeme?
+							</div>
+
+							<div class="select-wrap-wrap">
+					14. Zuzana
+								<div class="select-wrap">
+									<select name="14. Zuzana _____ studuje v Praze." size="1" required>
+										<option value="a) ráda studovat">ráda studovat</option>
+										<option value="b) ráda studuje">ráda studuje</option>
+										<option value="c) ráda studují">ráda studují</option>
+									</select>
+								</div>
+					studuje v Praze.
+							</div>
+
+							<div class="select-wrap-wrap">
+					15. Mám
+								<div class="select-wrap">
+									<select name="15. Mám _____." size="1" required>
+										<option value="a) velký syn a malá dcera">velký syn a malá dcera</option>
+										<option value="b) velkého syna a malou dceru">velkého syna a malou dceru</option>
+										<option value="c) velký syna a malá dceru">velký syna a malá dceru</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					16. Zítra
+								<div class="select-wrap">
+									<select name="16.1-Zítra _____" size="1" required>
+										<option value="a) v">v</option>
+										<option value="b) ve">ve</option>
+										<option value="c) ve">ve</option>
+									</select>
+								</div>
+					čtyři odpoledne pojedeme
+								<div class="select-wrap">
+									<select name="16.2-čtyři odpoledne pojedeme_____" size="1" required>
+										<option value="a) do">do</option>
+										<option value="b) na">na</option>
+										<option value="c) k">k</option>
+									</select>
+								</div>
+					babičce
+								<div class="select-wrap">
+									<select name="16.3-babičce _____ návštěvu." size="1" required>
+										<option value="a) v">v</option>
+										<option value="b) k">k</option>
+										<option value="c) na">na</option>
+									</select>
+								</div>
+					návštěvu.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					17. Maminka
+								<div class="select-wrap">
+									<select name="17. Maminka _____ do práce pěšky." size="1" required>
+										<option value="a) jela">jela</option>
+										<option value="b) byla">byla</option>
+										<option value="c) šla">šla</option>
+									</select>
+								</div>
+					do práce pěšky.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					18. Umíš
+								<div class="select-wrap">
+									<select name="18. Umíš _____?" size="1" required>
+										<option value="a) čeština">čeština</option>
+										<option value="b) český">český</option>
+										<option value="c) česky">česky</option>
+									</select>
+								</div>
+					?
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					19. Jsem nemocný a jsem
+								<div class="select-wrap">
+									<select name="19. Jsem nemocný a jsem _____." size="1" required>
+										<option value="a) v doma">v doma</option>
+										<option value="b) doma">doma</option>
+										<option value="c) dům">dům</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					20. V pátek
+								<div class="select-wrap">
+									<select name="20. V pátek  _____ na koncert." size="1" required>
+										<option value="a) jsem chtěla jít">jsem chtěla jít</option>
+										<option value="b) chtěla jsem jít">chtěla jsem jít</option>
+										<option value="c) chtěla jít jsem">chtěla jít jsem</option>
+									</select>
+								</div>
+					na koncert.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					21. Vařím
+								<div class="select-wrap">
+									<select name="21. Vařím v _____." size="1" required>
+										<option value="a) ložnici">ložnici</option>
+										<option value="b) kuchyni">kuchyni</option>
+										<option value="c) koupelně">koupelně</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					22.
+								<div class="select-wrap">
+									<select name="22. _____ jsem nebyla v Portugalsku." size="1" required>
+										<option value="a) Někdy">Někdy</option>
+										<option value="b) Někdo">Někdo</option>
+										<option value="c) Nikdy">Nikdy</option>
+									</select>
+								</div>
+					jsem nebyla v Portugalsku.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					23. V pondělí nikam
+								<div class="select-wrap">
+									<select name="23. V pondělí nikam _____." size="1" required>
+										<option value="a) pojedu">pojedu</option>
+										<option value="b) nebudu jet">nebudu jet</option>
+										<option value="c) nepojedu">nepojedu</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					24. Bydlím v
+								<div class="select-wrap">
+									<select name="24. Bydlím v _____." size="1" required>
+										<option value="a) České republice">České republice</option>
+										<option value="b) Česká republika">Česká republika</option>
+										<option value="c) Českou republiku">Českou republiku</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					25. V pokoji máme
+								<div class="select-wrap">
+									<select name="25.1-V pokoji máme _____" size="1" required>
+										<option value="a) dva">dva</option>
+										<option value="b) dvě">dvě</option>
+										<option value="c) dva">dva</option>
+									</select>
+								</div>
+					křesla,
+								<div class="select-wrap">
+									<select name="25.2-křesla, _____" size="1" required>
+										<option value="a) dvě">dvě</option>
+										<option value="b) dvě">dvě</option>
+										<option value="c) dvě">dvě</option>
+									</select>
+								</div>
+					lampy a
+								<div class="select-wrap">
+									<select name="25.3-lampy a _____ stoly." size="1" required>
+										<option value="a) dva">dva</option>
+										<option value="b) dva">dva</option>
+										<option value="c) dva">dva</option>
+									</select>
+								</div>
+					stoly.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					26. Můj kolega má málo
+								<div class="select-wrap">
+									<select name="26. Můj kolega má málo _____." size="1" required>
+										<option value="a) čas">as</option>
+										<option value="b) časa">časa</option>
+										<option value="c) času">času</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					27. Maminka pracuje
+								<div class="select-wrap">
+									<select name="27.1-Maminka pracuje _____" size="1" required>
+										<option value="a) od">od</option>
+										<option value="b) z">z</option>
+										<option value="c) s">s</option>
+									</select>
+								</div>
+					osmi
+								<div class="select-wrap">
+									<select name="27.2-osmi _____ šesti." size="1" required>
+										<option value="a) do">do</option>
+										<option value="b) do">do</option>
+										<option value="c) do">do</option>
+									</select>
+								</div>
+					šesti.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					28. Petr je kamarád
+								<div class="select-wrap">
+									<select name="28. Petr je kamarád _____ a _____." size="1" required>
+										<option value="a) Alice a Alena">Alice a Alena</option>
+										<option value="b) Alici a Aleny">Alici a Aleny</option>
+										<option value="c) Alici a Alena">Alici a Alena</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					29.
+								<div class="select-wrap">
+									<select name="29. _____ polévku 20 minut." size="1" required>
+										<option value="a) Vařila jsem">Vařila jsem</option>
+										<option value="b) Uvařila jsem">Uvařila jsem</option>
+										<option value="c) Dovařila jsem">Dovařila jsem</option>
+									</select>
+								</div>
+					polévku 20 minut.
+							</div>
+
+							<div class="select-wrap-wrap">
+					30. Chceš jít do kina
+								<div class="select-wrap">
+									<select name="30. Chceš jít do kina _____ na koncert?" size="1" required>
+										<option value="a) ale">ale</option>
+										<option value="b) nebo">nebo</option>
+										<option value="c) a">a</option>
+									</select>
+								</div>
+					na koncert?
+							</div>
+
+							<div class="select-wrap-wrap">
+					31. Narodil jsem se
+								<div class="select-wrap">
+									<select name="31. Narodil jsem se _____ 2001." size="1" required>
+										<option value="a) rok">rok</option>
+										<option value="b) v roce">v roce</option>
+										<option value="c) v rok">v rok</option>
+									</select>
+								</div>
+					2001.
+							</div>
+
+							<div class="select-wrap-wrap">
+					32. Pro
+								<div class="select-wrap">
+									<select name="32. Pro _____ je ten dárek?" size="1" required>
+										<option value="a) kdo">kdo</option>
+										<option value="b) koho">koho</option>
+										<option value="c) kom">kom</option>
+									</select>
+								</div>
+					je ten dárek?
+							</div>
+
+							<div class="select-wrap-wrap">
+					33. Mluvíme o Petrovi. Mluvíme o
+								<div class="select-wrap">
+									<select name="33. Mluvíme o Petrovi. Mluvíme o _____." size="1" required>
+										<option value="a) ní">ní</option>
+										<option value="b) něho">něho</option>
+										<option value="c) něm">něm</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					34. Co
+								<div class="select-wrap">
+									<select name="34. Co _____ chtěla dělat?" size="1" required>
+										<option value="a) byste">byste</option>
+										<option value="b) by">by</option>
+										<option value="c) bych">bych</option>
+									</select>
+								</div>
+					chtěla dělat?
+							</div>
+
+							<div class="select-wrap-wrap">
+					35.
+								<div class="select-wrap">
+									<select name="35. _____ měla peníze, jela bych na dovolenou." size="1" required>
+										<option value="a) Kdybych">Kdybych</option>
+										<option value="b) Abych">Abych</option>
+										<option value="c) Bych">Bych</option>
+									</select>
+								</div>
+					měla peníze, jela bych na dovolenou.
+							</div>
+
+							<div class="select-wrap-wrap">
+					36. Člověk, který nechce nic dělat, je
+								<div class="select-wrap">
+									<select name="36. Člověk, který nechce nic dělat, je _____." size="1" required>
+										<option value="a) pracovitý">pracovitý</option>
+										<option value="b) liný">liný</option>
+										<option value="c) zvědavý">zvědavý</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					37. Monika je
+								<div class="select-wrap">
+									<select name="37. Monika je _____ než já." size="1" required>
+										<option value="a) stará">stará</option>
+										<option value="b) starší">starší</option>
+										<option value="c) nejstarší">nejstarší</option>
+									</select>
+								</div>
+					než já.
+							</div>
+
+							<div class="select-wrap-wrap">
+					38. Prosím, mluvte
+								<div class="select-wrap">
+									<select name="38. Prosím, mluvte _____!" size="1" required>
+										<option value="a) smutně">smutně</option>
+										<option value="b) potichu">potichu</option>
+										<option value="c) zajímavě">zajímavě</option>
+									</select>
+								</div>
+					!
+							</div>
+
+							<div class="select-wrap-wrap">
+					39. Lucie
+								<div class="select-wrap">
+									<select name="39. Lucie _____ fyzice." size="1" required>
+										<option value="a) rozumí">rozumí</option>
+										<option value="b) umí">umí</option>
+										<option value="c) vysvětluje">vysvětluje</option>
+									</select>
+								</div>
+					fyzice.
+							</div>
+
+							<div class="select-wrap-wrap">
+					40. Syn
+								<div class="select-wrap">
+									<select name="40. Syn _____." size="1" required>
+										<option value="a) obléká se">obléká se</option>
+										<option value="b) se obléká">se obléká</option>
+										<option value="c) obléká">obléká</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					41.
+								<div class="select-wrap">
+									<select name="41. _____ mi knedlíky." size="1" required>
+										<option value="a) nelíbí se">nelíbí se</option>
+										<option value="b) nechutnají">nechutnají</option>
+										<option value="c) nemám ráda">nemám ráda</option>
+									</select>
+								</div>
+					mi knedlíky.
+							</div>
+
+							<div class="select-wrap-wrap">
+					42. Maso jím
+								<div class="select-wrap">
+									<select name="42. Maso jím _____." size="1" required>
+										<option value="a) vidličkou a nožem">vidličkou a nožem</option>
+										<option value="b) vidlička a nůž">vidlička a nůž</option>
+										<option value="c) vidličku a nůž">vidličku a nůž</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					43.
+								<div class="select-wrap">
+									<select name="43. _____ špatnému počasí nemůžeme jít na procházku." size="1" required>
+										<option value="a) díky">díky</option>
+										<option value="b) proti">proti</option>
+										<option value="c) kvůli">kvůli</option>
+									</select>
+								</div>
+					špatnému počasí nemůžeme jít na procházku.
+							</div>
+
+							<div class="select-wrap-wrap">
+					44.
+								<div class="select-wrap">
+									<select name="44. _____ pozor!" size="1" required>
+										<option value="a) Dávej">Dávej</option>
+										<option value="b) Dávám">Dávám</option>
+										<option value="c) Nedávej">Nedávej</option>
+									</select>
+								</div>
+					pozor!
+							</div>
+
+							<div class="select-wrap-wrap">
+					45.
+								<div class="select-wrap">
+									<select name="45. _____, pojď sem!" size="1" required>
+										<option value="a) Martine">Martine</option>
+										<option value="b) Martin">Martin</option>
+										<option value="c) Martina">Martina</option>
+									</select>
+								</div>
+					, pojď sem!
+							</div>
+
+							<div class="select-wrap-wrap">
+					46. Paní,
+								<div class="select-wrap">
+									<select name="46. Paní, _____ vidím, je velmi hezká." size="1" required>
+										<option value="a) která">která</option>
+										<option value="b) kterou">kterou</option>
+										<option value="c) které">které</option>
+									</select>
+								</div>
+					vidím, je velmi hezká.
+							</div>
+
+							<div class="select-wrap-wrap">
+					47. Mému
+								<div class="select-wrap">
+									<select name="47. Mému _____ je 50 let." size="1" required>
+										<option value="a) tatínkovi">tatínkovi</option>
+										<option value="b) tatínek">tatínek</option>
+										<option value="c) tatínka">tatínka</option>
+									</select>
+								</div>
+					je 50 let.
+							</div>
+
+							<div class="select-wrap-wrap">
+					48. Bojím se
+								<div class="select-wrap">
+									<select name="48. Bojím se _____." size="1" required>
+										<option value="a) bourka">bourka</option>
+										<option value="b) bouřky">bouřky</option>
+										<option value="c) bouřce">bouřce</option>
+									</select>
+								</div>
+					.
+							</div>
+
+							<div class="select-wrap-wrap">
+					49. Tato restaurace je zavřena. Musíme jít
+								<div class="select-wrap">
+									<select name="49. Tato restaurace je zavřena. Musíme jít _____." size="1" required>
+										<option value="a) do jiné">do jiné</option>
+										<option value="b) v jinou">v jinou</option>
+										<option value=") z jiné">z jiné</option>
+									</select>
+								</div>
+					.
+							</div>
+
+
+							<div class="select-wrap-wrap">
+					50. Řekněte mi, prosím, svoje
+								<div class="select-wrap">
+									<select name="50. Řekněte mi, prosím, svoje _____." size="1" required>
+										<option value="a) adresa">adresa</option>
+										<option value="b) příjmení">příjmení</option>
+										<option value="c) práce">práce</option>
+									</select>
+								</div>
+					.
+							</div>
+
+									<div class="test-button-wrap">
+										<button class="forms button-green">Отправить!</button>
+									</div>
+
+
+								</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="thanks">
+	<p>Спасибо. Результаты вашего теста приняты.</p>
+</div>
+
+
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+
+
+	<!-- Load Scripts Start -->
+	<script>var scr = {"scripts":[
+		{"src" : "libs/jquery/jquery-1.11.2.min.js", "async" : false},
+		{"src" : "js/test.js", "async" : false}
+		]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+	</script>
+	<script>
+
+	</script>
+	<!-- Load Scripts End -->
+</body>
+</html>
